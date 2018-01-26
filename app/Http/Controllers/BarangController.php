@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\barang;
+use App\Jenbar;
+use Yajra\Datatables\Html\Builder;
+use Yajra\Datatables\Datatables;
 
 class BarangController extends Controller
 {
@@ -14,6 +18,8 @@ class BarangController extends Controller
     public function index()
     {
         //
+        $barang=barang::all();
+        return view('barang.index', compact('barang'));
     }
 
     /**
@@ -24,6 +30,9 @@ class BarangController extends Controller
     public function create()
     {
         //
+        $barang= barang::all();
+        $jenbar= Jenbar::all();
+        return view('barang.create', compact('jenbar','barang'));
     }
 
     /**
@@ -35,6 +44,17 @@ class BarangController extends Controller
     public function store(Request $request)
     {
         //
+        $barang = new barang;
+        $barang->namabarang = $request->nama;
+        $barang->Merk = $request->Merk;
+        $barang->ukuran = $request->ukuran;
+        $barang->harga = $request->harga;
+        $barang->jumlah = $request->jumlah;
+        $barang->type = $request->type;
+        $barang->rasa = $request->rasa;
+        $barang->jenbar_id = $request->jenbar_id;
+        $barang->save();
+        return redirect('admin/barang');
     }
 
     /**
@@ -57,6 +77,9 @@ class BarangController extends Controller
     public function edit($id)
     {
         //
+        $barang = barang::findOrFail($id);
+        $jenbar = Jenbar::all();
+        return view('barang.edit', compact('jenbar','barang'));
     }
 
     /**
@@ -69,6 +92,17 @@ class BarangController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $barang =  barang::findOrFail($id);
+        $barang->namabarang = $request->nama;
+        $barang->Merk = $request->Merk;
+        $barang->ukuran = $request->ukuran;
+        $barang->harga = $request->harga;
+        $barang->jumlah = $request->jumlah;
+        $barang->type = $request->type;
+        $barang->rasa = $request->rasa;
+        $barang->jenbar_id = $request->jenbar_id;
+        $barang->save();
+        return redirect('admin/barang');
     }
 
     /**
@@ -80,5 +114,8 @@ class BarangController extends Controller
     public function destroy($id)
     {
         //
+        $barang = barang::findOrFail($id);
+        $barang->delete();
+        return redirect('admin/barang');
     }
 }

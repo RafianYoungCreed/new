@@ -23,32 +23,46 @@
 		</div>
 
 		<div class="panel-body">
-		<form action="{{route('pemasok.store')}}" method="post" enctype="multipart/form-data">
+		<form action="{{route('barang.store')}}" method="post" enctype="multipart/form-data">
 			{{csrf_field()}}
 
 
 			<div class="form-group">
-				<label class="control-lable">Nama Pemasok</label>
+				<label class="control-lable">Nama Barang</label>
 				<input type="text" name="nama" class="form-control" required="">
 			</div>
 			<div class="form-group">
-				<label class="control-lable">Alamat</label>
-				<textarea class="form-control" name="alamat"></textarea>
+				<label class="control-lable">Jenis Barang</label>
+				<select class="form-control" name="jenbar_id">
+					@foreach($jenbar as $data)
+					<option value="{{$data->id}}">{{$data->namajenis}}</option>
+					@endforeach
+				</select>
 			</div>
-
 			<div class="form-group">
-				<label class="control-lable">Kota</label>
-				<input type="text" name="kota" class="form-control" required="">
+				<label class="control-lable">Merk</label>
+				<input type="text" name="Merk" class="form-control" required="">
 			</div>
-
 			<div class="form-group">
-				<label class="control-lable">No Telpon</label>
-				<input type="number" name="no_telp" class="form-control" required="">
+				<label class="control-lable">Ukuran</label>
+				<input type="text" name="ukuran" class="form-control" required="">
 			</div>
-
+			
 			<div class="form-group">
-				<label class="control-lable">No Pax</label>
-				<input type="number" name="no_pax" class="form-control" required="">
+				<label class="control-lable">Type</label>
+				<input type="text" name="type" class="form-control" required="">
+			</div>
+			<div class="form-group">
+				<label class="control-lable">Rasa</label>
+				<input type="text" name="rasa" class="form-control" required="">
+			</div>
+			<div class="form-group">
+				<label class="control-lable">Jumlah</label>
+				<input type="number" name="jumlah" class="form-control" required="">
+			</div>
+			<div class="form-group">
+				<label class="control-lable">Harga</label>
+				<input type="number" name="harga" class="form-control" required="">
 			</div>
 			<br>
 			<div class="pull-right">

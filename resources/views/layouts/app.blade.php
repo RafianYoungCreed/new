@@ -49,6 +49,7 @@
                             <li><a href="{{ url('/home') }}">Dashboard</a></li>
                             <li><a href="{{ route('jenbar.index') }}">Jenis Barang</a></li>
                             <li><a href="{{ route('pemasok.index') }}">Pemasok</a></li>
+                            <li><a href="{{ route('barang.index') }}">Barang</a></li>
                         @endif
                     </ul>
 

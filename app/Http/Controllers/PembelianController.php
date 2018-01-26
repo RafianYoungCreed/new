@@ -3,21 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Jenbar;
-use Yajra\Datatables\Html\Builder;
-use Yajra\Datatables\Datatables;
 
-class JenbarController extends Controller
+class PembelianController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request, Builder $htmlBuilder)
+    public function index()
     {
-        $jenbar=jenbar::all();
-        return view('jenbar.index', compact('jenbar'));
+        //
     }
 
     /**
@@ -27,9 +23,7 @@ class JenbarController extends Controller
      */
     public function create()
     {
-        $jenbar=jenbar::all();
-        return view('jenbar.create');
-
+        //
     }
 
     /**
@@ -41,10 +35,6 @@ class JenbarController extends Controller
     public function store(Request $request)
     {
         //
-        $jenbar = new jenbar;
-        $jenbar->namajenis =$request->nama;
-        $jenbar->save();
-        return redirect('admin/jenbar');
     }
 
     /**
@@ -67,8 +57,6 @@ class JenbarController extends Controller
     public function edit($id)
     {
         //
-         $jenbar = jenbar::findOrFail($id);
-        return view('jenbar.edit', compact('jenbar'));
     }
 
     /**
@@ -81,10 +69,6 @@ class JenbarController extends Controller
     public function update(Request $request, $id)
     {
         //
-        $jenbar = jenbar::findOrFail($id);
-        $jenbar->namajenis =$request->nama;
-        $jenbar->save();
-        return redirect('admin/jenbar');
     }
 
     /**
@@ -96,8 +80,5 @@ class JenbarController extends Controller
     public function destroy($id)
     {
         //
-        $jenbar = jenbar::findOrFail($id);
-        $jenbar->delete();
-        return redirect('admin/jenbar');
     }
 }
