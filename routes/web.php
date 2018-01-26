@@ -22,4 +22,6 @@ Route::group(['prefix'=>'admin', 'middleware'=>['auth']], function () {
 Route::resource('jenbar', 'JenbarController');
 Route::resource('pemasok', 'PemasokController');
 Route::resource('barang', 'BarangController');
+Route::resource('penjualan', 'PenjualanController');
+Route::resource('pembelian', 'PembelianController');
 });

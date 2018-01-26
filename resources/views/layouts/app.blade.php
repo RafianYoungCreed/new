@@ -50,6 +50,8 @@
                             <li><a href="{{ route('jenbar.index') }}">Jenis Barang</a></li>
                             <li><a href="{{ route('pemasok.index') }}">Pemasok</a></li>
                             <li><a href="{{ route('barang.index') }}">Barang</a></li>
+                            <li><a href="{{ route('penjualan.index') }}">Penjualan</a></li>
+                            <li><a href="{{ route('pembelian.index') }}">Pembelian</a></li>
                         @endif
                     </ul>
 

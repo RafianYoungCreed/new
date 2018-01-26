@@ -3,8 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\barang;
+use App\penjualan;
+use Yajra\Datatables\Html\Builder;
+use Yajra\Datatables\Datatables;
 
-class PembelianController extends Controller
+class PenjualanController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +18,8 @@ class PembelianController extends Controller
     public function index()
     {
         //
-        $pembelian=pembelian::all();
-        return view('pembelian.index', compact('pembelian'));
+        $penjualan=penjualan::all();
+        return view('penjualan.index', compact('penjualan'));
     }
 
     /**
@@ -26,6 +30,9 @@ class PembelianController extends Controller
     public function create()
     {
         //
+        $barang= barang::all();
+        $penjualan= penjualan::all();
+        return view('penjualan.create', compact('penjualan','barang'));
     }
 
     /**
@@ -37,6 +44,14 @@ class PembelianController extends Controller
     public function store(Request $request)
     {
         //
+        $penjualan = new penjualan;
+        $penjualan->no_nota = $request->no_nota;
+        $penjualan->barang_id = $request->barang_id;
+        $penjualan->jumlah = $request->jumlah;
+        $penjualan->total = $request->total;
+        $penjualan->tgl_penjualan = $request->tgl_penjualan;
+        $penjualan->save();
+        return redirect('admin/penjualan');
     }
 
     /**
@@ -59,6 +74,9 @@ class PembelianController extends Controller
     public function edit($id)
     {
         //
+        $penjualan = penjualan::findOrFail($id);
+        $barang = barang::all();
+        return view('penjualan.edit', compact('barang','penjualan'));
     }
 
     /**
@@ -71,6 +89,14 @@ class PembelianController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $penjualan = penjualan::findOrFail($id);
+        $penjualan->no_nota = $request->no_nota;
+        $penjualan->barang_id = $request->barang_id;
+        $penjualan->jumlah = $request->jumlah;
+        $penjualan->total = $request->total;
+        $penjualan->tgl_penjualan = $request->tgl_penjualan;
+        $penjualan->save();
+        return redirect('admin/penjualan');
     }
 
     /**
