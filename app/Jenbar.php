@@ -7,8 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 class Jenbar extends Model
 {
     protected $fillable = ['namajenis'];
-    /*public function books()
-	{
-		return $this->hasMany('App\Barang);
-	}*/
+    protected $visible = ['namajenis'];
+    public  $timestamps = true;
+ 	
+ 	public function barang(){
+			return $this->hasMany('App\Barang');
+	}
+	
 }
