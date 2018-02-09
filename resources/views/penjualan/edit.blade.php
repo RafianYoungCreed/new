@@ -11,21 +11,22 @@
 	<div class="col-md-12">
 		<section class="content-header">
     		 <h1>
-    		   Tambah Data penjualan
+    		   Edit Data penjualan
     		 </h1>
       		<ol class="breadcrumb">
       		  <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-      		  <li class="fa fa-car">penjualan</li><li class="active">Tambah penjualan</li>
+      		  <li class="fa fa-car">penjualan</li><li class="active">Edit penjualan</li>
       		</ol>
     	</section><br><br>
     	<div class="panel panel-primary">
-			<div class="panel-heading" style="background: #9932cc">Tambah penjualan
+			<div class="panel-heading" style="background: #9932cc">Edit penjualan
 		</div>
 
 		<div class="panel-body">
-		<form action="{{route('penjualan.update')}}" method="post" enctype="multipart/form-data">
+		<form action="{{route('penjualan.update',$penjualan->id)}}" method="post" enctype="multipart/form-data">
 			{{csrf_field()}}
-
+			<input type="hidden" name="_method" value="PATCH">
+            <input type="hidden" name="_token" value="{{ csrf_token() }}">
 			<div class="form-group">
 				<label class="control-lable">Nomor Nota</label>
 				<input type="text" name="no_nota" class="form-control" required="" value="{{$penjualan->no_nota}}">
@@ -41,10 +42,6 @@
 			<div class="form-group">
 				<label class="control-lable">Jumlah</label>
 				<input type="number" name="jumlah" class="form-control" required="" value="{{$penjualan->jumlah}}">
-			</div>
-			<div class="form-group">
-				<label class="control-lable">Total</label>
-				<input type="number" name="total" class="form-control" required="" value="{{$penjualan->total}}">
 			</div>
 			<div class="form-group">
 				<label class="control-lable">Tanggal Penjualan</label>

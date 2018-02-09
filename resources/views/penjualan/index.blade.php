@@ -49,10 +49,10 @@
           <td>{{$data->no_nota}}</td>
 					<td>{{$data->barang->namabarang}}</td>
           <td>{{$data->barang->Merk}}</td>
+          <td>{{$data->jumlah}}</td>
           <td>{{$data->barang->ukuran}}</td>
           <td>{{$data->barang->type}}</td>
           <td>{{$data->barang->rasa}}</td>
-          <td>{{$data->jumlah}}</td>
           <td>{{$data->barang->harga}}</td>
           <td>{{$data->total}}</td>
 					<td>

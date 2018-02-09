@@ -44,11 +44,15 @@ class PenjualanController extends Controller
     public function store(Request $request)
     {
         //
+        $barang=barang::findOrFail($request->barang_id);
+
+        $total=$request->jumlah * $barang->harga;
+
         $penjualan = new penjualan;
         $penjualan->no_nota = $request->no_nota;
         $penjualan->barang_id = $request->barang_id;
         $penjualan->jumlah = $request->jumlah;
-        $penjualan->total = $request->total;
+        $penjualan->total = $total;
         $penjualan->tgl_penjualan = $request->tgl_penjualan;
         $penjualan->save();
         return redirect('admin/penjualan');
@@ -89,11 +93,15 @@ class PenjualanController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $barang=barang::findOrFail($request->barang_id);
+
+        $total=$request->jumlah * $barang->harga;
+
         $penjualan = penjualan::findOrFail($id);
         $penjualan->no_nota = $request->no_nota;
         $penjualan->barang_id = $request->barang_id;
         $penjualan->jumlah = $request->jumlah;
-        $penjualan->total = $request->total;
+        $penjualan->total = $total;
         $penjualan->tgl_penjualan = $request->tgl_penjualan;
         $penjualan->save();
         return redirect('admin/penjualan');
@@ -108,5 +116,9 @@ class PenjualanController extends Controller
     public function destroy($id)
     {
         //
+        $penjualan = penjualan::findOrFail($id);
+        $penjualan->delete();
+        return redirect('admin/penjualan');
+
     }
 }

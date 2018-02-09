@@ -44,10 +44,6 @@
 				<input type="number" name="jumlah" class="form-control" required="">
 			</div>
 			<div class="form-group">
-				<label class="control-lable">Total</label>
-				<input type="number" name="total" class="form-control" required="">
-			</div>
-			<div class="form-group">
 				<label class="control-lable">Tanggal Penjualan</label>
 				<input type="date" name="tgl_penjualan" class="form-control" required="">
 			</div>

@@ -15,6 +15,7 @@ class CreatePembeliansTable extends Migration
     {
         Schema::create('pembelians', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('harga');
             $table->string('jumlah');
             $table->date('tgl_pembelian');
             $table->integer('barang_id')->unsigned();

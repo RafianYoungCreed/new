@@ -23,7 +23,7 @@
 		</div>
 
 		<div class="panel-body">
-		<form action="{{route('barang.update')}}" method="post" enctype="multipart/form-data">
+		<form action="{{route('barang.update',$barang->id)}}" method="post" enctype="multipart/form-data">
 			{{csrf_field()}}
 
 
