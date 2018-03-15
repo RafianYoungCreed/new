@@ -15,8 +15,9 @@ class CreatePembeliansTable extends Migration
     {
         Schema::create('pembelians', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('harga');
+            $table->string('no_nota');
             $table->string('jumlah');
+            $table->string('total');
             $table->date('tgl_pembelian');
             $table->integer('barang_id')->unsigned();
             $table->foreign('barang_id')->references('id')->on('barangs')->onUpdate('cascade')->onDelete('cascade');

@@ -41,8 +41,11 @@ class JenbarController extends Controller
     public function store(Request $request)
     {
         //
+        $this->validate($request, [
+            'namajenis'=> 'required|unique:jenbars,namajenis'
+            ]);
         $jenbar = new jenbar;
-        $jenbar->namajenis =$request->nama;
+        $jenbar->namajenis =$request->namajenis;
         $jenbar->save();
         return redirect('admin/jenbar');
     }
@@ -81,8 +84,11 @@ class JenbarController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $this->validate($request, [
+            'namajenis'=> 'required|unique:jenbars,namajenis'
+            ]);
         $jenbar = jenbar::findOrFail($id);
-        $jenbar->namajenis =$request->nama;
+        $jenbar->namajenis =$request->namajenis;
         $jenbar->save();
         return redirect('admin/jenbar');
     }

@@ -43,7 +43,7 @@
 				<tr>
 					<td>{{$no++}}</td>
 					<td>{{$data->namapemasok}}</td>
-          <td>{{$data->Alamat}}</td>
+          <td>{{$data->alamat}}</td>
           <td>{{$data->kota}}</td>
           <td>{{$data->no_telp}}</td>
           <td>{{$data->no_pax}}</td>
