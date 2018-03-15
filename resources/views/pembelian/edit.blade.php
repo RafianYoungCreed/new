@@ -29,10 +29,6 @@
 			{{csrf_field()}}
 			
 			<div class="form-group">
-				<label class="control-lable">Nomor Nota</label>
-				<input type="text" name="no_nota" class="form-control" required="" value="{{$pembelian->no_nota}}">
-			</div>
-			<div class="form-group">
 				<label class="control-lable">Barang</label>
 				<select class="form-control" name="barang_id">
 					@foreach($barang as $data)

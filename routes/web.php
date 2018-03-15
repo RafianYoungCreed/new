@@ -24,4 +24,5 @@ Route::resource('pemasok', 'PemasokController');
 Route::resource('barang', 'BarangController');
 Route::resource('penjualan', 'PenjualanController');
 Route::resource('pembelian', 'PembelianController');
+Route::resource('user', 'UserController');
 });

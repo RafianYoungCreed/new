@@ -27,10 +27,7 @@
 			{{csrf_field()}}
 			<input type="hidden" name="_method" value="PATCH">
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
-			<div class="form-group">
-				<label class="control-lable">Nomor Nota</label>
-				<input type="text" name="no_nota" class="form-control" required="" value="{{$penjualan->no_nota}}">
-			</div>
+            
 			<div class="form-group">
 				<label class="control-lable">Barang</label>
 				<select class="form-control" name="barang_id">

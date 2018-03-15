@@ -31,9 +31,6 @@
                    <th>No</th>
 					         <th>Nama barang</th>
                    <th>merk</th>
-                   <th>ukuran</th>
-                   <th>type</th>
-                   <th>rasa</th>
                    <th>stok</th>
                    <th>Jenis Barang</th>
                    <th>harga</th>
@@ -47,9 +44,6 @@
 					<td>{{$no++}}</td>
 					<td>{{$data->namabarang}}</td>
           <td>{{$data->Merk}}</td>
-          <td>{{$data->ukuran}}</td>
-          <td>{{$data->type}}</td>
-          <td>{{$data->rasa}}</td>
           <td>{{$data->jumlah}}</td>
           <td>{{$data->jenbar->namajenis}}</td>
           <td>{{$data->harga}}</td>

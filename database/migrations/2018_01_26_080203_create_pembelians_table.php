@@ -15,7 +15,6 @@ class CreatePembeliansTable extends Migration
     {
         Schema::create('pembelians', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('no_nota');
             $table->string('jumlah');
             $table->string('total');
             $table->date('tgl_pembelian');

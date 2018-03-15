@@ -49,7 +49,6 @@ class PenjualanController extends Controller
         $total=$request->jumlah * $barang->harga;
 
         $penjualan = new penjualan;
-        $penjualan->no_nota = $request->no_nota;
         $penjualan->barang_id = $request->barang_id;
         $penjualan->jumlah = $request->jumlah;
         $penjualan->total = $total;
@@ -98,7 +97,6 @@ class PenjualanController extends Controller
         $total=$request->jumlah * $barang->harga;
 
         $penjualan = penjualan::findOrFail($id);
-        $penjualan->no_nota = $request->no_nota;
         $penjualan->barang_id = $request->barang_id;
         $penjualan->jumlah = $request->jumlah;
         $penjualan->total = $total;

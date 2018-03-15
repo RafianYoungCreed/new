@@ -28,10 +28,11 @@
 			<input type="hidden" name="_token" value="{{csrf_token()}}">
 			{{csrf_field()}}
 
-			<div class="form-group">
+			<div class="form-group{{ $errors->has('namapemasok') ? ' has-error' : '' }}">
 				<label class="control-lable">Nama Pemasok</label>
-				<input type="text" name="nama" class="form-control" required="" value="{{$pemasok->namapemasok}}">
-			</div>
+				<input type="text" name="namapemasok" class="form-control" value="{{$pemasok->namapemasok}}">
+				{!! $errors->first('namapemasok', '<p class="help-block">:message</p>') !!}
+			</div><br>
 
 			<div class="form-group">
 				<label class="control-lable">Alamat</label>

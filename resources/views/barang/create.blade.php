@@ -39,22 +39,10 @@
 					@endforeach
 				</select>
 			</div>
-			<div class="form-group">
+			<div class="form-group{{ $errors->has('Merk') ? ' has-error' : '' }}">
 				<label class="control-lable">Merk</label>
-				<input type="text" name="Merk" class="form-control" required="">
-			</div>
-			<div class="form-group">
-				<label class="control-lable">Ukuran</label>
-				<input type="text" name="ukuran" class="form-control" required="">
-			</div>
-			
-			<div class="form-group">
-				<label class="control-lable">Type</label>
-				<input type="text" name="type" class="form-control" required="">
-			</div>
-			<div class="form-group">
-				<label class="control-lable">Rasa</label>
-				<input type="text" name="rasa" class="form-control" required="">
+				<input type="text" name="Merk" class="form-control">
+				{!! $errors->first('Merk', '<p class="help-block">:message</p>') !!}
 			</div>
 			<div class="form-group">
 				<label class="control-lable">Jumlah</label>

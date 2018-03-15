@@ -34,9 +34,6 @@
                    <th>Nama Pemasok</th>
                    <th>Merk</th>
                    <th>jumlah</th>
-                   <th>ukuran</th>
-                   <th>type</th>
-                   <th>rasa</th>
                    <th>harga</th>
                    <th>Total</th>
 					         <th>Action</th>
@@ -47,14 +44,11 @@
 				@foreach($pembelian as $data)
 				<tr>
 					<td>{{$no++}}</td>
-          <td>{{$data->no_nota}}</td>
+          <td>{{$data->id}}</td>
 					<td>{{$data->barang->namabarang}}</td>
           <td>{{$data->pemasok->namapemasok}}</td>
           <td>{{$data->barang->Merk}}</td>
           <td>{{$data->jumlah}}</td>
-          <td>{{$data->barang->ukuran}}</td>
-          <td>{{$data->barang->type}}</td>
-          <td>{{$data->barang->rasa}}</td>
           <td>{{$data->barang->harga}}</td>
           <td>{{$data->total}}</td>
 					<td>

@@ -27,9 +27,10 @@
 			{{csrf_field()}}
 
 
-			<div class="form-group">
+			<div class="form-group{{ $errors->has('namapemasok') ? ' has-error' : '' }}">
 				<label class="control-lable">Nama Pemasok</label>
-				<input type="text" name="nama" class="form-control" required="">
+				<input type="text" name="namapemasok" class="form-control">
+				{!! $errors->first('namapemasok', '<p class="help-block">:message</p>') !!}
 			</div>
 			<div class="form-group">
 				<label class="control-lable">Alamat</label>

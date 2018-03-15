@@ -44,14 +44,14 @@ class BarangController extends Controller
     public function store(Request $request)
     {
         //
+        $this->validate($request, [
+            'Merk'=> 'required|unique:barangs,Merk'
+            ]);
         $barang = new barang;
         $barang->namabarang = $request->nama;
         $barang->Merk = $request->Merk;
-        $barang->ukuran = $request->ukuran;
         $barang->harga = $request->harga;
         $barang->jumlah = $request->jumlah;
-        $barang->type = $request->type;
-        $barang->rasa = $request->rasa;
         $barang->jenbar_id = $request->jenbar_id;
         $barang->save();
         return redirect('admin/barang');
@@ -92,14 +92,14 @@ class BarangController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $this->validate($request, [
+            'Merk'=> 'required|unique:barangs,Merk'
+            ]);
         $barang =  barang::findOrFail($id);
         $barang->namabarang = $request->nama;
         $barang->Merk = $request->Merk;
-        $barang->ukuran = $request->ukuran;
         $barang->harga = $request->harga;
         $barang->jumlah = $request->jumlah;
-        $barang->type = $request->type;
-        $barang->rasa = $request->rasa;
         $barang->jenbar_id = $request->jenbar_id;
         $barang->save();
         return redirect('admin/barang');

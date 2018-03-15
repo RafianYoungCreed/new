@@ -17,11 +17,8 @@ class CreateBarangsTable extends Migration
             $table->increments('id');
             $table->string('namabarang');
             $table->string('Merk');
-            $table->string('ukuran');
             $table->string('harga');
             $table->string('jumlah'); 
-            $table->string('type');
-            $table->string('rasa');
             $table->integer('jenbar_id')->unsigned();
             $table->foreign('jenbar_id')->references('id')->on('jenbars')->onUpdate('cascade')->onDelete('cascade'); 
             $table->timestamps();

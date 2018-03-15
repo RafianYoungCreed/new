@@ -52,6 +52,7 @@
                             <li><a href="{{ route('barang.index') }}">Barang</a></li>
                             <li><a href="{{ route('penjualan.index') }}">Penjualan</a></li>
                             <li><a href="{{ route('pembelian.index') }}">Pembelian</a></li>
+                            <li><a href="{{ route('user.index') }}">Karyawan</a></li>
                         @endif
                     </ul>
 

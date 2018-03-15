@@ -28,10 +28,6 @@
 
 
 			<div class="form-group">
-				<label class="control-lable">Nomor Nota</label>
-				<input type="text" name="no_nota" class="form-control" required="">
-			</div>
-			<div class="form-group">
 				<label class="control-lable">Barang</label>
 				<select class="form-control" name="barang_id">
 					@foreach($barang as $data)

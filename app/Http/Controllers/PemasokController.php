@@ -42,8 +42,11 @@ class PemasokController extends Controller
     public function store(Request $request)
     {
         //
+        $this->validate($request, [
+            'namapemasok'=> 'required|unique:pemasoks,namapemasok'
+            ]);
         $pemasok = new pemasok;
-        $pemasok->namapemasok = $request->nama;
+        $pemasok->namapemasok = $request->namapemasok;
         $pemasok->alamat = $request->alamat;
         $pemasok->kota = $request->kota;
         $pemasok->no_telp = $request->no_telp;
@@ -86,8 +89,11 @@ class PemasokController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $this->validate($request, [
+            'namapemasok'=> 'required|unique:pemasoks,namapemasok'
+            ]);
         $pemasok = pemasok::findOrFail($id);
-        $pemasok->namapemasok = $request->nama;
+        $pemasok->namapemasok = $request->namapemasok;
         $pemasok->alamat = $request->alamat;
         $pemasok->kota = $request->kota;
         $pemasok->no_telp = $request->no_telp;

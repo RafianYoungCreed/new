@@ -53,7 +53,6 @@ class PembelianController extends Controller
         $total=$request->jumlah * $barang->harga;
 
         $pembelian = new pembelian;
-        $pembelian->no_nota = $request->no_nota;
         $pembelian->barang_id = $request->barang_id;
         $pembelian->pemasok_id = $request->pemasok_id;
         $pembelian->jumlah = $request->jumlah;
@@ -104,7 +103,6 @@ class PembelianController extends Controller
         $total=$request->jumlah * $barang->harga;
 
         $pembelian = pembelian::findOrFail($id);
-        $pembelian->no_nota = $request->no_nota;
         $pembelian->barang_id = $request->barang_id;
         $pembelian->jumlah = $request->jumlah;
         $pembelian->total = $total;
