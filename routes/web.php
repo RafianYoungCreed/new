@@ -18,11 +18,13 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
-Route::group(['prefix'=>'admin', 'middleware'=>['auth']], function () {
+Route::group(['middleware'=>['auth','role:admin|karyawan']], function () {
 Route::resource('jenbar', 'JenbarController');
 Route::resource('pemasok', 'PemasokController');
 Route::resource('barang', 'BarangController');
 Route::resource('penjualan', 'PenjualanController');
 Route::resource('pembelian', 'PembelianController');
-Route::resource('user', 'UserController');
+});
+Route::group(['middleware'=>['auth','role:admin']],function(){
+	Route::resource('user','UserController');
 });

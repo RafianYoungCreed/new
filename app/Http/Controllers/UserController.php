@@ -100,6 +100,6 @@ class UserController extends Controller
         //
         $user = User::findOrFail($id);
         $user->delete();
-        return redirect('admin/user');
+        return redirect('user');
     }
 }

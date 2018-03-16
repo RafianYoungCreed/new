@@ -10,6 +10,7 @@
 		<h1>Oops!</h1>
 		<div class="error-heading">403</div>
 		<p>KAMU TIDAK MEMILIKI HAK AKKSES</p>
+		    <p>Kembali ke <a href="home">halaman home</a></p>
 	</div>
 </body>
 </html>

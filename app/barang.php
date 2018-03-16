@@ -16,7 +16,7 @@ class barang extends Model
 			return $this->hasMany('App\penjualan');
 	}
 	public function pembelian(){
-			return $this->hasMany('App\pembelian');
+			return $this->hasMany('App\pembelian','barang_id');
 	}
  	public function Jenbar(){
 			return $this->belongsTo('App\Jenbar');

@@ -47,7 +47,7 @@ class JenbarController extends Controller
         $jenbar = new jenbar;
         $jenbar->namajenis =$request->namajenis;
         $jenbar->save();
-        return redirect('admin/jenbar');
+        return redirect('jenbar');
     }
 
     /**
@@ -90,7 +90,7 @@ class JenbarController extends Controller
         $jenbar = jenbar::findOrFail($id);
         $jenbar->namajenis =$request->namajenis;
         $jenbar->save();
-        return redirect('admin/jenbar');
+        return redirect('jenbar');
     }
 
     /**
@@ -104,6 +104,6 @@ class JenbarController extends Controller
         //
         $jenbar = jenbar::findOrFail($id);
         $jenbar->delete();
-        return redirect('admin/jenbar');
+        return redirect('jenbar');
     }
 }

@@ -52,7 +52,7 @@ class PemasokController extends Controller
         $pemasok->no_telp = $request->no_telp;
         $pemasok->no_pax = $request->no_pax;
         $pemasok->save();
-        return redirect('admin/pemasok');
+        return redirect('pemasok');
     }
 
     /**
@@ -99,7 +99,7 @@ class PemasokController extends Controller
         $pemasok->no_telp = $request->no_telp;
         $pemasok->no_pax = $request->no_pax;
         $pemasok->save();
-        return redirect('admin/pemasok');
+        return redirect('pemasok');
     }
 
     /**
@@ -113,6 +113,6 @@ class PemasokController extends Controller
         //
         $pemasok = pemasok::findOrFail($id);
         $pemasok->delete();
-        return redirect('admin/pemasok');
+        return redirect('pemasok');
     }
 }

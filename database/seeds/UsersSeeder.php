@@ -19,8 +19,8 @@ class UsersSeeder extends Seeder
         $adminRole->save();
 
         $memberRole = new Role();
-        $memberRole->name="member";
-        $memberRole->display_name="Member";
+        $memberRole->name="Karyawan";
+        $memberRole->display_name="Karyawan";
         $memberRole->save();
 
         $admin = new User();
@@ -31,8 +31,8 @@ class UsersSeeder extends Seeder
         $admin->attachRole($adminRole);
 
         $member = new User();
-        $member->name="Sample Member";
-        $member->email="member@gmail.com";
+        $member->name="Karyawan";
+        $member->email="Karyawan@gmail.com";
         $member->password=bcrypt('rahasia');
         $member->save();
         $member->attachRole($memberRole);

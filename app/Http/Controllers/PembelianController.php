@@ -59,7 +59,7 @@ class PembelianController extends Controller
         $pembelian->total = $total;
         $pembelian->tgl_pembelian = $request->tgl_pembelian;
         $pembelian->save();
-        return redirect('admin/pembelian');
+        return redirect('pembelian');
     }
 
     /**
@@ -109,7 +109,7 @@ class PembelianController extends Controller
         $pembelian->tgl_pembelian = $request->tgl_pembelian;
         $pembelian->pemasok_id = $request->pemasok_id;
         $pembelian->save();
-        return redirect('admin/pembelian');
+        return redirect('pembelian');
     }
 
     /**
@@ -123,6 +123,6 @@ class PembelianController extends Controller
         //
         $pembelian = pembelian::findOrFail($id);
         $pembelian->delete();
-        return redirect('admin/pembelian');
+        return redirect('pembelian');
     }
 }

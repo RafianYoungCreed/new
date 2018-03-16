@@ -54,7 +54,7 @@ class PenjualanController extends Controller
         $penjualan->total = $total;
         $penjualan->tgl_penjualan = $request->tgl_penjualan;
         $penjualan->save();
-        return redirect('admin/penjualan');
+        return redirect('penjualan');
     }
 
     /**
@@ -102,7 +102,11 @@ class PenjualanController extends Controller
         $penjualan->total = $total;
         $penjualan->tgl_penjualan = $request->tgl_penjualan;
         $penjualan->save();
-        return redirect('admin/penjualan');
+
+        $barang-> barang::find($request->barang_id);
+        $barang->jumlah = $barang->jumlah - $request->jumlah;
+        $barang->save();
+        return redirect('penjualan');
     }
 
     /**
@@ -116,7 +120,7 @@ class PenjualanController extends Controller
         //
         $penjualan = penjualan::findOrFail($id);
         $penjualan->delete();
-        return redirect('admin/penjualan');
+        return redirect('penjualan');
 
     }
 }

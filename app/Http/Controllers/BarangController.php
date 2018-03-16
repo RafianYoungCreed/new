@@ -54,7 +54,7 @@ class BarangController extends Controller
         $barang->jumlah = $request->jumlah;
         $barang->jenbar_id = $request->jenbar_id;
         $barang->save();
-        return redirect('admin/barang');
+        return redirect('barang');
     }
 
     /**
@@ -102,7 +102,7 @@ class BarangController extends Controller
         $barang->jumlah = $request->jumlah;
         $barang->jenbar_id = $request->jenbar_id;
         $barang->save();
-        return redirect('admin/barang');
+        return redirect('barang');
     }
 
     /**
@@ -116,6 +116,6 @@ class BarangController extends Controller
         //
         $barang = barang::findOrFail($id);
         $barang->delete();
-        return redirect('admin/barang');
+        return redirect('barang');
     }
 }
